@@ -24,17 +24,52 @@ An MCP server that allows Agents to interact with a running Roblox game client â
 
 ## Quick Start
 
-### 1. Build the server
+### One-Command Install
 
-```bash
-git clone https://github.com/notpoiu/roblox-executor-mcp.git
-cd roblox-executor-mcp
-pnpm install && pnpm run build
+**Windows (PowerShell):**
+```powershell
+powershell -ExecutionPolicy Bypass -File <(curl -fsSL https://raw.githubusercontent.com/notpoiu/roblox-mcp/main/scripts/install.ps1)
 ```
 
-### 2. Add to your AI client
+**macOS/Linux:**
+```bash
+curl -fsSL https://raw.githubusercontent.com/notpoiu/roblox-mcp/main/scripts/install.sh | bash
+```
 
-Follow the setup guide for your client:
+### Manual Install
+
+```bash
+git clone https://github.com/notpoiu/roblox-mcp.git
+cd roblox-mcp
+npm install && npm run build
+```
+
+### Available Commands
+
+| Command | Description |
+|---|---|
+| `npm start` | Start the MCP server |
+| `npm start -- --baseurl ws://host:16384` | Start as secondary (relay to remote) |
+| `npm run configure:claude` | Configure Claude Desktop integration |
+| `npm run install:mcp` | Full setup with Claude config prompt |
+
+### Configure Claude Desktop
+
+**Windows:**
+```powershell
+npm run configure:claude
+```
+
+**macOS/Linux:**
+```bash
+npm run configure:claude
+```
+
+Or use the standalone scripts:
+- Windows: `scripts/configure-claude.ps1`
+- macOS/Linux: `scripts/configure-claude.sh`
+
+### All Setup Guides
 
 | Client | Guide |
 |---|---|
